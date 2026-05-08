@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwanlada Srijomkwan</title>
+<meta name="description" content="Kwanlada Srijomkwan — Cognitive Science PhD student at Rensselaer Polytechnic Institute. Research, teaching, software, and creative work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f3;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --accent: #6b4423;
+  --accent-soft: rgba(107, 68, 35, 0.08);
+  --border: #e8e4d9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+header.hero {
+  padding: 4rem 0 1rem;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+}
+.headshot-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+.headshot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  display: block;
+}
+.headshot-initials {
+  display: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e8c79a, #6b4423);
+  color: #faf8f3;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+}
+.headshot-wrap.no-img .headshot { display: none; }
+.headshot-wrap.no-img .headshot-initials { display: flex; }
+.hero h1 {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.hero .role {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+.hero .blurb {
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 600px;
+}
+.tabs {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  margin: 2rem 0 0;
+}
+.tabs-inner {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  flex-wrap: wrap;
+}
+.tab {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.tab:hover { border-color: var(--accent); }
+.tab.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+main { padding: 2rem 0 4rem; }
+section.tab-section { margin-bottom: 3rem; }
+section.tab-section h2 {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.005em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+section.tab-section h3 {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+.entry {
+  margin-bottom: 1.75rem;
+}
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.entry-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.entry-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.entry-org {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.entry-org a { color: var(--accent); text-decoration: none; }
+.entry-org a:hover { text-decoration: underline; }
+.entry ul {
+  margin-left: 1.2rem;
+  color: var(--text);
+}
+.entry ul li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.contact-item a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-word;
+}
+.contact-item a:hover { text-decoration: underline; }
+.contact-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.placeholder-note {
+  background: #fff7e6;
+  border-left: 3px solid #d4a574;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 1rem;
+  border-radius: 4px;
+  color: #6b4423;
+  font-size: 0.88rem;
+}
+.placeholder-note code {
+  background: rgba(107, 68, 35, 0.1);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+.skills-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.skill-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.publication {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+  line-height: 1.55;
+}
+.publication a { color: var(--accent); text-decoration: none; }
+.publication a:hover { text-decoration: underline; }
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.art-tile {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f0ead8, #e8e4d9);
+  border: 1px dashed #c9c4b4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+ul.honors { margin-left: 1.2rem; }
+ul.honors li { margin-bottom: 0.5rem; }
+.fade-in { animation: fadeIn 0.25s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="headshot-wrap" id="headshotWrap">
+        <img src="assets/headshot.jpg" alt="Kwanlada Srijomkwan" class="headshot"
+             onerror="document.getElementById('headshotWrap').classList.add('no-img');">
+        <div class="headshot-initials">KS</div>
+      </div>
+      <div>
+        <h1>Kwanlada Srijomkwan</h1>
+        <p class="role">Cognitive Science PhD Student · Rensselaer Polytechnic Institute</p>
+        <p class="blurb">First-year PhD student in Cognitive Science working on semantic agents. Background spans computational neurolinguistics, speech, and Bayesian cognition — and a deep love of teaching.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Audience views">
+    <div class="tabs-inner" role="tablist">
+      <button class="tab active" data-filter="all" role="tab">All</button>
+      <button class="tab" data-filter="teaching" role="tab">Teaching</button>
+      <button class="tab" data-filter="research" role="tab">Research</button>
+      <button class="tab" data-filter="coding" role="tab">Coding &amp; Software</button>
+      <button class="tab" data-filter="creative" role="tab">Creative</button>
+    </div>
+  </nav>
+
+  <main id="content">
+    <!-- About -->
+    <section class="tab-section" data-audience="all teaching research coding creative">
+      <h2>About</h2>
+      <p>I'm a first-year Cognitive Science PhD student at Rensselaer Polytechnic Institute, working on semantic agents. I have research experience across cognitive science and computer science, with publications in cognitive psychology and physics, and presentations at several conferences.</p>
+      <p style="margin-top: 0.75rem;">My research interests include computational neurolinguistics, speech comprehension, Bayesian cognition, machine-brain resource rationality, fMRI, natural language processing, neural networks, and the cognitive neuropsychology of language. My true passion lies in teaching — bringing wonder, self-confidence, and opportunities to others.</p>
+    </section>
+
+    <!-- Education -->
+    <section class="tab-section" data-audience="all teaching research coding creative">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">PhD in Cognitive Science</span>
+          <span class="entry-meta">Expected May 2030</span>
+        </div>
+        <div class="entry-org">Rensselaer Polytechnic Institute · Troy, NY</div>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">BA in Cognitive Science (Honors), Phi Beta Kappa</span>
+          <span class="entry-meta">May 2025</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University, Krieger School of Arts &amp; Sciences · Baltimore, MD</div>
+        <ul>
+          <li>GPA: 3.99 · Dean's List Fall 2021–Spring 2025</li>
+          <li>2025 Glushko Outstanding Undergraduate Cognitive Scientist Prize</li>
+          <li>Coursework across Linguistics, Computer Science, and the Writing Seminars</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="tab-section" data-audience="all research">
+      <h2>Research Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Research Assistant — Cognitive Neuroscience Lab</span>
+          <span class="entry-meta">Jan 2023 – Present</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University · Advisor: Michael McCloskey</div>
+        <ul>
+          <li>Investigate cognitive representations of motor plans in writing, focusing on effector (in)dependence.</li>
+          <li>Design experiments addressing how transfer of writing motor plans between effectors introduces latency.</li>
+          <li>Recruit and collect data from 40–50 participants per semester via the SONA Psychology Research Portal.</li>
+          <li>Code and analyze writing stroke patterns and reaction-time data.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Researcher — Center for Speech and Language Processing</span>
+          <span class="entry-meta">Sep 2023 – Dec 2023</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University · Advisor: Kenton Murray</div>
+        <ul>
+          <li>Created a review of available Thai-language datasets for NLP training, machine learning, and machine translation.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Research Assistant — Phonetics and Phonology Lab</span>
+          <span class="entry-meta">Aug 2022 – May 2023</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University · Advisor: Colin Wilson</div>
+        <ul>
+          <li>Investigated the role of tone in Thai automatic speech recognition.</li>
+          <li>Conducted a study on tone assignment of English loanwords in Thai.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Undergraduate Researcher — Mentored by Jane Li, PhD Candidate</span>
+          <span class="entry-meta">Jan 2022 – May 2022</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>Researched morphological representation of English plural morphemes.</li>
+          <li>Annotated speech data using Praat; piloted experiments and ran participants in a sound booth.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="tab-section" data-audience="all research">
+      <h2>Publications &amp; Presentations</h2>
+      <div class="publication">
+        McCloskey, M., Im, E., Wong, K., Luo, E., Upadya, N., <strong>Srijomkwan, K.</strong>, Chen, C. (2025). Effector-independence in writing. <em>Journal of Experimental Psychology: Human Perception and Performance</em>, 51(5), 643–663. <a href="https://doi.org/10.1037/xhp0001308" target="_blank" rel="noopener">doi.org/10.1037/xhp0001308</a>
+      </div>
+      <div class="publication">
+        <strong>Srijomkwan, K.</strong>, et al. (2019). The Cancellation of Human Sounds Using Synthesized Soundwaves. <em>Journal of Physics: Conference Series</em>, 1380(1), 012123. <a href="https://doi.org/10.1088/1742-6596/1380/1/012123" target="_blank" rel="noopener">doi.org/10.1088/1742-6596/1380/1/012123</a>
+      </div>
+      <div class="publication">
+        "Effector Independence in Writing." Omega Psi Annual Cognitive Science Conference, Johns Hopkins University, 2024.
+      </div>
+      <div class="publication">
+        "Tone Assignment of English Loanwords in Thai." DREAMS Showcase, Johns Hopkins University, 2022 (poster).
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section class="tab-section" data-audience="all teaching">
+      <h2>Teaching Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant — Introduction to Cognitive Science (COGS2120)</span>
+          <span class="entry-meta">Aug 2025 – Present</span>
+        </div>
+        <div class="entry-org">Rensselaer Polytechnic Institute</div>
+        <ul>
+          <li>Develop and deliver 5 guest lectures on Neuroscience, Linguistics, and Cognitive Development.</li>
+          <li>Improve course schedule and assignments to better serve 52 students per semester.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant — Cognitive Development (AS.050.239/639)</span>
+          <span class="entry-meta">Jan 2024 – May 2025</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>Sole TA for up to 20 undergraduate and graduate students per semester, collaborating directly with faculty.</li>
+          <li>Designed exam questions, graded coursework, and hosted weekly office hours and exam reviews.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Course Assistant — Data Structures (Java)</span>
+          <span class="entry-meta">Jan 2023 – May 2025</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>150+ office-hour hours guiding students through debugging complex object-oriented programming projects.</li>
+          <li>Graded 200+ coding assignments and exams in collaboration with a 10-CA team.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant — Language and Mind (AS.050.102)</span>
+          <span class="entry-meta">Aug 2024 – Dec 2024</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University · Introductory Linguistics</div>
+        <ul>
+          <li>Held weekly recitations to guide students through linguistic problem sets.</li>
+          <li>Co-designed assignments and exams with graduate teaching assistants.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant — First Language Acquisition (AS.050.348/648)</span>
+          <span class="entry-meta">Aug 2023 – Dec 2024</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University · Upper-level linguistics &amp; cognitive psych</div>
+        <ul>
+          <li>Supported students engaging with empirical literature on infant monolingual and bilingual language acquisition.</li>
+          <li>Designed exam questions, graded coursework, and hosted weekly office hours.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Teaching Assistant — English Writing</span>
+          <span class="entry-meta">Jun 2023 – Jul 2023</span>
+        </div>
+        <div class="entry-org">Brewster Academy · Wolfeboro, NH</div>
+        <ul>
+          <li>Supported Thai international students with academic writing — position papers, literary analysis, and scientific writing.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Computer Science Tutor</span>
+          <span class="entry-meta">Apr 2018 – Oct 2019</span>
+        </div>
+        <div class="entry-org">Apiriya Weerapotchananan · Phichit, Thailand</div>
+        <ul>
+          <li>Taught Python and C++ to students in my rural hometown, preparing them for nationwide computer science competitions.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">STEM Tutor</span>
+          <span class="entry-meta">Nov 2018 – Feb 2019</span>
+        </div>
+        <div class="entry-org">Salinrat Kittiweerawong · Nakorn Pathom, Thailand</div>
+        <ul>
+          <li>Conducted one-on-one in-home tutoring for grades 5–7 — developed handouts, study materials, and quizzes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Coding -->
+    <section class="tab-section" data-audience="all coding">
+      <h2>Software &amp; Technical Work</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">NLP Research — Thai Language Dataset Review</span>
+          <span class="entry-meta">Sep 2023 – Dec 2023</span>
+        </div>
+        <div class="entry-org">Center for Speech and Language Processing, Johns Hopkins University</div>
+        <ul>
+          <li>Reviewed Thai-language datasets for NLP training, machine learning, and machine translation use cases.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Course Assistant — Data Structures (Java)</span>
+          <span class="entry-meta">Jan 2023 – May 2025</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>Helped 200+ students debug complex OOP assignments covering lists, stacks, queues, trees, heaps, graphs, hash tables, and sorting/searching.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Open Source &amp; Personal Projects</span>
+          <span class="entry-meta">Ongoing</span>
+        </div>
+        <div class="entry-org"><a href="https://github.com/kwan-sr" target="_blank" rel="noopener">github.com/kwan-sr</a></div>
+        <div class="placeholder-note"><strong>[Placeholder]</strong> Add 2–4 featured projects below — title, 1-line description, and a link. See the to-do doc.</div>
+        <ul>
+          <li><strong>[Project name]</strong> — [one-line description]. <a href="#">Link</a></li>
+          <li><strong>[Project name]</strong> — [one-line description]. <a href="#">Link</a></li>
+        </ul>
+      </div>
+
+      <h3>Technical Skills</h3>
+      <div class="skills-list">
+        <span class="skill-pill">Python (PyTorch)</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">C / C++</span>
+        <span class="skill-pill">R (Stan / Bayesian)</span>
+        <span class="skill-pill">MATLAB (PsychToolBox)</span>
+        <span class="skill-pill">SPM12 (fMRI)</span>
+        <span class="skill-pill">Praat</span>
+        <span class="skill-pill">Git</span>
+      </div>
+    </section>
+
+    <!-- Creative -->
+    <section class="tab-section" data-audience="all creative">
+      <h2>Creative Work</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Alongside research and teaching, I make visual art and write fiction. I minored in the Writing Seminars at Johns Hopkins.</p>
+
+      <h3>Visual Art</h3>
+      <div class="placeholder-note"><strong>[Placeholder]</strong> Drop 3–6 images into <code>assets/art/</code> (e.g., <code>art1.jpg</code>) and replace the tiles below.</div>
+      <div class="art-grid">
+        <div class="art-tile">Artwork 1</div>
+        <div class="art-tile">Artwork 2</div>
+        <div class="art-tile">Artwork 3</div>
+      </div>
+
+      <h3>Fiction Writing</h3>
+      <div class="placeholder-note"><strong>[Placeholder]</strong> Add a short artist/writer statement and 1–3 excerpts or links to full pieces.</div>
+      <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">[Artist/writer statement — 2–3 sentences on what you make and why.]</p>
+      <div class="entry">
+        <div class="entry-title">[Title of piece]</div>
+        <div class="entry-org">[Genre · Year · publication or "unpublished"]</div>
+        <p style="font-size: 0.95rem; margin-top: 0.5rem;">[Excerpt or short description.]</p>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="tab-section" data-audience="all teaching">
+      <h2>Leadership &amp; Mentorship</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Senior Advisor / Co-President — Omega Psi Cognitive Science Society</span>
+          <span class="entry-meta">May 2023 – Present</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>Increased event participation by 40% in first semester as Co-President; organized 5–6 academic events per semester.</li>
+          <li>Mentor first-year cognitive science students in course selection and research.</li>
+          <li>Now serve as Senior Advisor, mentoring co-presidents and collaborating with the National Omega Psi Cognitive Science Society.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Co-President — Thai Student Association</span>
+          <span class="entry-meta">May 2023 – May 2024</span>
+        </div>
+        <div class="entry-org">Johns Hopkins University</div>
+        <ul>
+          <li>Re-founded the Thai Student Association at JHU, raising awareness of Thai and Southeast Asian culture through inclusive campus events.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Honors -->
+    <section class="tab-section" data-audience="all teaching research coding creative">
+      <h2>Honors &amp; Awards</h2>
+      <ul class="honors">
+        <li><strong>Royal Thai Scholarship</strong> (Apr 2020 – Present) — National scholarship awarded to one Cognitive Science scholar per cohort for undergraduate through doctorate study abroad. <em>Thailand Ministry of Higher Education, Science, Research, and Innovation.</em></li>
+        <li><strong>Glushko Outstanding Undergraduate Cognitive Scientist Prize</strong> (2025) — Johns Hopkins University.</li>
+        <li><strong>Phi Beta Kappa</strong> — Johns Hopkins University.</li>
+      </ul>
+    </section>
+
+    <!-- Languages -->
+    <section class="tab-section" data-audience="all teaching research coding creative">
+      <h2>Languages</h2>
+      <p>Fluent in <strong>English</strong> and <strong>Thai</strong>. Conversational in <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>French</strong>.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="tab-section" data-audience="all teaching research coding creative">
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <a href="mailto:srijok@rpi.edu">srijok@rpi.edu</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <a href="https://github.com/kwan-sr" target="_blank" rel="noopener">github.com/kwan-sr</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/kwanlada-srijomkwan-b1a159177/" target="_blank" rel="noopener">kwanlada-srijomkwan</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">CV (PDF)</div>
+            <a href="assets/cv.pdf">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Kwanlada Srijomkwan</p>
+  </footer>
+</div>
+
+<script>
+(function() {
+  const tabs = document.querySelectorAll('.tab');
+  const sections = document.querySelectorAll('section.tab-section');
+  const main = document.getElementById('content');
+
+  function applyFilter(filter) {
+    sections.forEach(el => {
+      const audiences = (el.getAttribute('data-audience') || '').split(/\s+/);
+      if (audiences.includes(filter)) {
+        el.style.display = '';
+        el.classList.remove('fade-in');
+        // Trigger reflow then animate
+        void el.offsetWidth;
+        el.classList.add('fade-in');
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const f = tab.getAttribute('data-filter');
+      applyFilter(f);
+      history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
+    });
+  });
+
+  // Initialize from hash
+  const initial = (location.hash || '#all').slice(1);
+  const initTab = document.querySelector('.tab[data-filter="' + initial + '"]');
+  if (initTab && initial !== 'all') {
+    tabs.forEach(t => t.classList.remove('active'));
+    initTab.classList.add('active');
+    applyFilter(initial);
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

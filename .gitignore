@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Build/preview artifacts
+index.pdf
+*.tmp
+.~lock.*
+
+# Editor files
+.vscode/
+.idea/
+*.swp
