@@ -292,24 +292,25 @@ ul.honors li { margin-bottom: 0.5rem; }
 
   <nav class="tabs" aria-label="Audience views">
     <div class="tabs-inner" role="tablist">
-      <button class="tab active" data-filter="all" role="tab">All</button>
+      <button class="tab active" data-filter="highlights" role="tab">Highlights</button>
       <button class="tab" data-filter="teaching" role="tab">Teaching</button>
       <button class="tab" data-filter="research" role="tab">Research</button>
       <button class="tab" data-filter="coding" role="tab">Coding &amp; Software</button>
       <button class="tab" data-filter="creative" role="tab">Creative</button>
+      <button class="tab" data-filter="all" role="tab">All</button>
     </div>
   </nav>
 
   <main id="content">
-    <!-- About -->
-    <section class="tab-section" data-audience="all teaching research coding creative">
+    <!-- About (every tab) -->
+    <section class="tab-section" data-audience="highlights teaching research coding creative all">
       <h2>About</h2>
       <p>I'm a first-year Cognitive Science PhD student at Rensselaer Polytechnic Institute, working on semantic agents. I have research experience across cognitive science and computer science, with publications in cognitive psychology and physics, and presentations at several conferences.</p>
       <p style="margin-top: 0.75rem;">My research interests include computational neurolinguistics, speech comprehension, Bayesian cognition, machine-brain resource rationality, fMRI, natural language processing, neural networks, and the cognitive neuropsychology of language. My true passion lies in teaching — bringing wonder, self-confidence, and opportunities to others.</p>
     </section>
 
-    <!-- Highlights (All tab only) -->
-    <section class="tab-section" data-audience="all">
+    <!-- Highlights (Highlights tab only) -->
+    <section class="tab-section" data-audience="highlights">
       <h2>Highlights</h2>
 
       <h3>Education</h3>
@@ -338,11 +339,11 @@ ul.honors li { margin-bottom: 0.5rem; }
       <h3>Languages</h3>
       <p>Fluent in <strong>English</strong> and <strong>Thai</strong>. Conversational in <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>French</strong>.</p>
 
-      <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Use the tabs above for full research, teaching, software, and creative work.</p>
+      <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Use the tabs above for full research, teaching, software, and creative work — or click <strong>All</strong> for everything on one page.</p>
     </section>
 
-    <!-- Education -->
-    <section class="tab-section" data-audience="teaching research coding creative">
+    <!-- Education (every tab except Highlights) -->
+    <section class="tab-section" data-audience="teaching research coding creative all">
       <h2>Education</h2>
       <div class="entry">
         <div class="entry-head">
@@ -366,7 +367,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Research -->
-    <section class="tab-section" data-audience="research">
+    <section class="tab-section" data-audience="research all">
       <h2>Research Experience</h2>
 
       <div class="entry">
@@ -420,7 +421,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Publications -->
-    <section class="tab-section" data-audience="research">
+    <section class="tab-section" data-audience="research all">
       <h2>Publications &amp; Presentations</h2>
       <div class="publication">
         McCloskey, M., Im, E., Wong, K., Luo, E., Upadya, N., <strong>Srijomkwan, K.</strong>, Chen, C. (2025). Effector-independence in writing. <em>Journal of Experimental Psychology: Human Perception and Performance</em>, 51(5), 643–663. <a href="https://doi.org/10.1037/xhp0001308" target="_blank" rel="noopener">doi.org/10.1037/xhp0001308</a>
@@ -437,7 +438,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Teaching -->
-    <section class="tab-section" data-audience="teaching">
+    <section class="tab-section" data-audience="teaching all">
       <h2>Teaching Experience</h2>
 
       <div class="entry">
@@ -535,7 +536,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Coding -->
-    <section class="tab-section" data-audience="coding">
+    <section class="tab-section" data-audience="coding all">
       <h2>Software &amp; Technical Work</h2>
 
       <div class="entry">
@@ -587,7 +588,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Creative -->
-    <section class="tab-section" data-audience="creative">
+    <section class="tab-section" data-audience="creative all">
       <h2>Creative Work</h2>
       <p style="color: var(--text-muted); margin-bottom: 1rem;">Alongside research and teaching, I make visual art and write fiction. I minored in the Writing Seminars at Johns Hopkins.</p>
 
@@ -610,7 +611,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Leadership -->
-    <section class="tab-section" data-audience="teaching">
+    <section class="tab-section" data-audience="teaching all">
       <h2>Leadership &amp; Mentorship</h2>
       <div class="entry">
         <div class="entry-head">
@@ -637,7 +638,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Honors -->
-    <section class="tab-section" data-audience="teaching research coding creative">
+    <section class="tab-section" data-audience="teaching research coding creative all">
       <h2>Honors &amp; Awards</h2>
       <ul class="honors">
         <li><strong>Royal Thai Scholarship</strong> (Apr 2020 – Present) — National scholarship awarded to one Cognitive Science scholar per cohort for undergraduate through doctorate study abroad. <em>Thailand Ministry of Higher Education, Science, Research, and Innovation.</em></li>
@@ -647,13 +648,13 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Languages -->
-    <section class="tab-section" data-audience="teaching research coding creative">
+    <section class="tab-section" data-audience="teaching research coding creative all">
       <h2>Languages</h2>
       <p>Fluent in <strong>English</strong> and <strong>Thai</strong>. Conversational in <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>French</strong>.</p>
     </section>
 
-    <!-- Contact -->
-    <section class="tab-section" data-audience="all teaching research coding creative">
+    <!-- Contact (every tab) -->
+    <section class="tab-section" data-audience="highlights teaching research coding creative all">
       <h2>Contact</h2>
       <div class="contact-card">
         <div class="contact-grid">
@@ -685,9 +686,9 @@ ul.honors li { margin-bottom: 0.5rem; }
 
 <script>
 (function() {
+  const DEFAULT_TAB = 'highlights';
   const tabs = document.querySelectorAll('.tab');
   const sections = document.querySelectorAll('section.tab-section');
-  const main = document.getElementById('content');
 
   function applyFilter(filter) {
     sections.forEach(el => {
@@ -695,7 +696,6 @@ ul.honors li { margin-bottom: 0.5rem; }
       if (audiences.includes(filter)) {
         el.style.display = '';
         el.classList.remove('fade-in');
-        // Trigger reflow then animate
         void el.offsetWidth;
         el.classList.add('fade-in');
       } else {
@@ -704,25 +704,29 @@ ul.honors li { margin-bottom: 0.5rem; }
     });
   }
 
+  function setActive(filter) {
+    tabs.forEach(t => {
+      const isActive = t.getAttribute('data-filter') === filter;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
       const f = tab.getAttribute('data-filter');
+      setActive(f);
       applyFilter(f);
-      history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
+      history.replaceState(null, '', f === DEFAULT_TAB ? location.pathname : '#' + f);
     });
   });
 
-  // Initialize from hash
-  const initial = (location.hash || '#all').slice(1);
+  // Initialize from hash, falling back to default
+  const initial = (location.hash || '#' + DEFAULT_TAB).slice(1);
   const initTab = document.querySelector('.tab[data-filter="' + initial + '"]');
-  if (initTab && initial !== 'all') {
-    tabs.forEach(t => t.classList.remove('active'));
-    initTab.classList.add('active');
-    applyFilter(initial);
-  }
+  const startFilter = initTab ? initial : DEFAULT_TAB;
+  setActive(startFilter);
+  applyFilter(startFilter);
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
