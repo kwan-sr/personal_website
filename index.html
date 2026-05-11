@@ -261,6 +261,19 @@ section.tab-section h3 {
   font-size: 0.85rem;
   font-style: italic;
 }
+.art-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.art-grid img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem 0;
@@ -647,11 +660,10 @@ ul.honors ul li { margin-bottom: 0.25rem; }
       <p style="color: var(--text-muted); margin-bottom: 1rem;">Alongside research and teaching, I make visual art and write fiction. I minored in the Writing Seminars at Johns Hopkins.</p>
 
       <h3>Visual Art</h3>
-      <div class="placeholder-note"><strong>[Placeholder]</strong> Drop 3–6 images into <code>assets/art/</code> (e.g., <code>art1.jpg</code>) and replace the tiles below.</div>
       <div class="art-grid">
-        <div class="art-tile">Artwork 1</div>
-        <div class="art-tile">Artwork 2</div>
-        <div class="art-tile">Artwork 3</div>
+        <img src="assets/art/art1.jpg" alt="Artwork 1" loading="lazy">
+        <img src="assets/art/art2.jpg" alt="Artwork 2" loading="lazy">
+        <img src="assets/art/art3.jpg" alt="Artwork 3" loading="lazy">
       </div>
 
       <h3>Fiction Writing</h3>
