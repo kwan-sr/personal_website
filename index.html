@@ -149,6 +149,27 @@ section.tab-section h3 {
   margin-top: 1.75rem;
   margin-bottom: 0.75rem;
 }
+section.tab-section h4 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.excerpt {
+  margin-top: 0.6rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 2px solid var(--border);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+.excerpt p { margin-bottom: 0.6rem; }
+.excerpt p:last-child { margin-bottom: 0; }
+.excerpt em { font-style: italic; }
 .entry {
   margin-bottom: 1.75rem;
 }
@@ -657,7 +678,7 @@ ul.honors ul li { margin-bottom: 0.25rem; }
     <!-- Creative -->
     <section class="tab-section" data-audience="creative all">
       <h2>Creative Work</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1rem;">Alongside research and teaching, I make visual art and write fiction. I minored in the Writing Seminars at Johns Hopkins.</p>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Alongside research and teaching, I make visual art and write fiction and poetry. I minored in the Writing Seminars at Johns Hopkins.</p>
 
       <h3>Visual Art</h3>
       <div class="art-grid">
@@ -666,13 +687,65 @@ ul.honors ul li { margin-bottom: 0.25rem; }
         <img src="assets/art/art3.jpg" alt="Artwork 3" loading="lazy">
       </div>
 
-      <h3>Fiction Writing</h3>
-      <div class="placeholder-note"><strong>[Placeholder]</strong> Add a short artist/writer statement and 1–3 excerpts or links to full pieces.</div>
-      <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">[Artist/writer statement — 2–3 sentences on what you make and why.]</p>
+      <h3>Writing</h3>
+      <p style="margin-bottom: 1rem;">I write fiction and poetry across realist, speculative, and mythic registers — often returning to Thai landscapes, ancestral ritual, and language as a kind of pattern or code.</p>
+
+      <h4>Published</h4>
+
       <div class="entry">
-        <div class="entry-title">[Title of piece]</div>
-        <div class="entry-org">[Genre · Year · publication or "unpublished"]</div>
-        <p style="font-size: 0.95rem; margin-top: 0.5rem;">[Excerpt or short description.]</p>
+        <div class="entry-head">
+          <span class="entry-title">Three poems</span>
+          <span class="entry-meta">2024</span>
+        </div>
+        <div class="entry-org"><a href="https://tr.ee/qZ1i-QW2Qp" target="_blank" rel="noopener">JHU Warehouse Art &amp; Literary Magazine</a></div>
+        <ul>
+          <li>“If You Saw Me at Rumney, NH”</li>
+          <li>“The Dog-Eared Book”</li>
+          <li>“Portrait of the Artist as Taphanhin, Thailand”</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">“Knitting Code” — flash fiction</span>
+          <span class="entry-meta">2023</span>
+        </div>
+        <div class="entry-org">JHU Digital Media Center, 1st Magazine</div>
+        <div class="excerpt">
+          <p>My mother was a seamstress, and this is a list of what she'd made for me:</p>
+          <p><em>My favorite safety blanket. Heavy like a mother's hug, softer than clouds.</em></p>
+          <p><em>Tiny baby socks, old-rose color, with tiny clementines dangling on the sides — to commemorate an infancy I've never had.</em></p>
+        </div>
+      </div>
+
+      <h4>Selected Work in Progress</h4>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">“Incense” — short fiction</span>
+        </div>
+        <div class="entry-org">Unpublished</div>
+        <div class="excerpt">
+          <p>One of the strangest interludes in my life was the time I stopped subsisting on grave offerings. It was Cheng Méng day, April 2009, and the sun dawned hot and vengeful, as always. The foraging was always good this time of the year, and by four in the morning I was well-nourished, redolent with the smell of incense, bathed in the ashes of gold papers, and was ready to take a well-deserved nap.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">“The Great Chalawan” — short fiction</span>
+        </div>
+        <div class="entry-org">Unpublished · A Thai myth retold as the diary of a 25-foot crocodile</div>
+        <div class="excerpt">
+          <p>Mercy. Harmony. Responsibility. Grand Uncle or no, the old crocodile should just shut up and make his way to heaven already. The ancient creature could barely move anymore, and in human form he could only sit in one place and meditate. How could one rule the rivers without daily seeing her blessings for oneself?</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><em>Quarden</em> — novel in progress</span>
+        </div>
+        <div class="entry-org">First draft · Stand-alone fantasy, first of a planned four-book series</div>
+        <p style="font-size: 0.95rem; margin-top: 0.5rem;">A fantasy novel (with young-adult crossover appeal) — designed to read as a complete story on its own while opening into a larger four-book arc.</p>
       </div>
     </section>
 
