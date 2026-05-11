@@ -7,7 +7,7 @@
 <meta name="description" content="Kwanlada Srijomkwan — Cognitive Science PhD student at Rensselaer Polytechnic Institute. Research, teaching, software, and creative work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #faf8f3;
@@ -120,6 +120,10 @@ header.hero {
   transition: all 0.15s ease;
   font-family: inherit;
   white-space: nowrap;
+}
+.tab[lang="th"] {
+  font-family: 'Noto Sans Thai', 'Inter', system-ui, sans-serif;
+  font-size: 0.92rem;
 }
 .tab:hover { border-color: var(--accent); }
 .tab.active {
@@ -266,6 +270,23 @@ footer {
 }
 ul.honors { margin-left: 1.2rem; }
 ul.honors li { margin-bottom: 0.5rem; }
+ul.honors ul { margin-top: 0.4rem; margin-left: 1.2rem; list-style: disc; }
+ul.honors ul li { margin-bottom: 0.25rem; }
+.thai-content {
+  font-family: 'Noto Sans Thai', 'Inter', system-ui, -apple-system, sans-serif;
+}
+.thai-content h2,
+.thai-content h3 {
+  font-family: 'Noto Serif Thai', 'Source Serif Pro', Georgia, serif;
+}
+.thai-content p,
+.thai-content li {
+  line-height: 1.75;
+}
+.thai-intro {
+  font-size: 1.02rem;
+  margin-bottom: 1.5rem;
+}
 .fade-in { animation: fadeIn 0.25s ease; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
@@ -297,12 +318,13 @@ ul.honors li { margin-bottom: 0.5rem; }
       <button class="tab" data-filter="research" role="tab">Research</button>
       <button class="tab" data-filter="coding" role="tab">Coding &amp; Software</button>
       <button class="tab" data-filter="creative" role="tab">Creative</button>
+      <button class="tab" data-filter="thai" role="tab" lang="th">ภาษาไทย</button>
       <button class="tab" data-filter="all" role="tab">All</button>
     </div>
   </nav>
 
   <main id="content">
-    <!-- About (every tab) -->
+    <!-- About (every tab except Thai, which has its own intro) -->
     <section class="tab-section" data-audience="highlights teaching research coding creative all">
       <h2>About</h2>
       <p>I'm a first-year Cognitive Science PhD student at Rensselaer Polytechnic Institute, working on semantic agents. I have research experience across cognitive science and computer science, with publications in cognitive psychology and physics, and presentations at several conferences.</p>
@@ -339,10 +361,46 @@ ul.honors li { margin-bottom: 0.5rem; }
       <h3>Languages</h3>
       <p>Fluent in <strong>English</strong> and <strong>Thai</strong>. Conversational in <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>French</strong>.</p>
 
-      <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Use the tabs above for full research, teaching, software, and creative work — or click <strong>All</strong> for everything on one page.</p>
+      <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Use the tabs above for full research, teaching, software, and creative work — or click <strong>All</strong> for everything on one page. <span lang="th">ดูประวัติย่อภาษาไทยได้ที่แท็บ ภาษาไทย</span></p>
     </section>
 
-    <!-- Education (every tab except Highlights) -->
+    <!-- Thai content (Thai tab only) -->
+    <section class="tab-section thai-content" data-audience="thai" lang="th">
+      <h2>ประวัติย่อ — สอนภาษาศาสตร์</h2>
+      <p class="thai-intro">สวัสดีค่ะ ดิฉันเอย ขวัญลดา ศรีจอมขวัญ ปัจจุบันเป็นนักศึกษาปริญญาเอกสาขา Cognitive Science ปีที่ 1 ณ Rensselaer Polytechnic Institute สหรัฐอเมริกา ทำงานวิจัยด้าน Language-Endowed Artificial Intelligence (LEIA) มีประสบการณ์สอนและช่วยสอนวิชาภาษาศาสตร์เบื้องต้น พัฒนาการภาษา และ cognitive neuroscience ทั้งในระดับมหาวิทยาลัยและการสอนพิเศษ</p>
+
+      <h3>ประวัติการศึกษา</h3>
+      <ul class="honors">
+        <li>กำลังศึกษาปรัชญาดุษฎีบัณฑิต ด้าน <a href="https://en.wikipedia.org/wiki/Cognitive_science" target="_blank" rel="noopener">Cognitive Science</a> ปีที่ 1 ณ Rensselaer Polytechnic Institute สหรัฐอเมริกา หัวข้องานวิจัย Language-Endowed Artificial Intelligence (LEIA)</li>
+        <li>สำเร็จการศึกษาภาควิชา Cognitive Science มหาวิทยาลัย Johns Hopkins สหรัฐอเมริกา ความเชี่ยวชาญ: ภาษาศาสตร์, computational approach to cognition, cognitive neuroscience
+          <ul>
+            <li>เกียรตินิยมอันดับ 1 ภาควิชา Cognitive Science และวิชาโท ภาษาศาสตร์</li>
+            <li>ได้รับรางวัล <a href="https://cogsci.jhu.edu/2025/05/01/recognizing-excellence-kwanlada-srijomkwan-wins-glushko-award/" target="_blank" rel="noopener">2025 Glushko Outstanding Undergraduate Cognitive Scientist Prize</a> ซึ่งมอบให้กับนักศึกษาเพียง 1 คนต่อปีการศึกษา ในภาควิชา Cognitive Science</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>ประสบการณ์ทำงานเกี่ยวกับภาษาศาสตร์</h3>
+      <ul class="honors">
+        <li>ปัจจุบัน รับตำแหน่งผู้ช่วยสอนและวิทยากรบรรยายพิเศษ (Guest Lecturer) วิชา Introduction to Cognitive Science ณ Rensselaer Polytechnic Institute หัวข้อภาษาศาสตร์เบื้องต้น พัฒนาการภาษา พัฒนาการปัญญา และ cognitive neuroscience นักเรียนมากกว่า 50 คน</li>
+        <li>ผู้ช่วยสอนวิชาภาษาศาสตร์เบื้องต้น (Language and Mind) ณ Johns Hopkins University นักเรียนกว่า 80 คน</li>
+        <li>เสนอผลงานวิจัยทางภาษาศาสตร์ “Tone Assignment of English Loanwords in Thai” ณ DREAMS (Day of Undergraduate Research in Engineering, Arts, Medicine, and the Sciences) 2022, Johns Hopkins University</li>
+      </ul>
+
+      <h3>ประสบการณ์ทำงาน / ประสบการณ์สอน</h3>
+      <ul class="honors">
+        <li>ผู้ช่วยสอนวิชาพัฒนาการปัญญา (Cognitive Development) ณ Johns Hopkins University สหรัฐอเมริกา เทอม Spring 2024 และ 2025</li>
+        <li>ผู้ช่วยสอนวิชา Data Structures (วิชาเขียนโปรแกรมเบื้องต้น โครงสร้างข้อมูล) ณ Johns Hopkins University</li>
+        <li>พี่ช่วยน้อง สอวน. ภูมิศาสตร์ ศูนย์มหิดลวิทยานุสรณ์ ปี 2561–2563</li>
+        <li>ผู้แทนประเทศไทย เหรียญทองแดง การแข่งขันภูมิศาสตร์โอลิมปิกนานาชาติ ประจำปี 2018 ณ Quebec, Canada</li>
+        <li>เหรียญทอง อันดับที่ 3 ของประเทศ การแข่งขันภูมิศาสตร์โอลิมปิกระดับชาติ ปีการศึกษา 2561</li>
+        <li>ประสบการณ์สอนพิเศษตัวต่อตัวกว่า 8 ปี วิชา สอวน. คอมพิวเตอร์ (ค่าย 1–2) ทบทวนบทเรียนวิชาคณิตศาสตร์ วิทยาศาสตร์ ภาษาอังกฤษ ภาษาอังกฤษเพื่อการสนทนา Neural Network ฯลฯ</li>
+      </ul>
+
+      <p style="margin-top: 1.75rem; color: var(--text-muted); font-size: 0.95rem;">สนใจติดต่อสอบถามหรือเรียนพิเศษ ดูข้อมูลติดต่อด้านล่าง หรืออีเมล <a href="mailto:srijok@rpi.edu" style="color: var(--accent);">srijok@rpi.edu</a></p>
+    </section>
+
+    <!-- Education (every tab except Highlights and Thai) -->
     <section class="tab-section" data-audience="teaching research coding creative all">
       <h2>Education</h2>
       <div class="entry">
@@ -654,7 +712,7 @@ ul.honors li { margin-bottom: 0.5rem; }
     </section>
 
     <!-- Contact (every tab) -->
-    <section class="tab-section" data-audience="highlights teaching research coding creative all">
+    <section class="tab-section" data-audience="highlights teaching research coding creative thai all">
       <h2>Contact</h2>
       <div class="contact-card">
         <div class="contact-grid">
