@@ -347,6 +347,40 @@ ul.honors ul li { margin-bottom: 0.25rem; }
   font-size: 1.02rem;
   margin-bottom: 1.5rem;
 }
+.under-construction {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: linear-gradient(135deg, #faf5ea, #f0ead8);
+  border: 1px dashed #c9c4b4;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+.uc-icon {
+  width: 56px;
+  height: 56px;
+  color: #b8851d;
+  margin: 0 auto 1.25rem;
+  display: block;
+}
+.under-construction h3 {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: var(--text);
+}
+.under-construction p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.under-construction .uc-hint {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
 .fade-in { animation: fadeIn 0.25s ease; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
@@ -380,6 +414,7 @@ ul.honors ul li { margin-bottom: 0.25rem; }
       <button class="tab" data-filter="creative" role="tab">Creative</button>
       <button class="tab" data-filter="thai" role="tab" lang="th">ภาษาไทย</button>
       <button class="tab" data-filter="all" role="tab">All</button>
+      <button class="tab" data-filter="blog" role="tab">Blog</button>
     </div>
   </nav>
 
@@ -819,8 +854,23 @@ ul.honors ul li { margin-bottom: 0.25rem; }
       <p>Fluent in <strong>English</strong> and <strong>Thai</strong>. Conversational in <strong>Spanish</strong>, <strong>Japanese</strong>, and <strong>French</strong>.</p>
     </section>
 
+    <!-- Blog (Blog tab only) -->
+    <section class="tab-section" data-audience="blog">
+      <h2>Blog</h2>
+      <div class="under-construction">
+        <svg class="uc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <h3>Under construction</h3>
+        <p>A blog is in the works — short notes on cognitive science, teaching, and the occasional aside on writing and making. Check back soon.</p>
+        <p class="uc-hint">Coming summer 2026</p>
+      </div>
+    </section>
+
     <!-- Contact (every tab) -->
-    <section class="tab-section" data-audience="highlights teaching research coding creative thai all">
+    <section class="tab-section" data-audience="highlights teaching research coding creative thai all blog">
       <h2>Contact</h2>
       <div class="contact-card">
         <div class="contact-grid">
