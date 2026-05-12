@@ -229,6 +229,30 @@ section.tab-section h4 {
   letter-spacing: 0.06em;
   font-weight: 500;
 }
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  margin-bottom: 1.25rem;
+}
+.download-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.download-link::before {
+  content: "↓";
+  font-size: 1rem;
+  line-height: 1;
+}
 .placeholder-note {
   background: #fff7e6;
   border-left: 3px solid #d4a574;
@@ -689,6 +713,7 @@ ul.honors ul li { margin-bottom: 0.25rem; }
 
       <h3>Writing</h3>
       <p style="margin-bottom: 1rem;">I write fiction and poetry across realist, speculative, and mythic registers — often returning to Thai landscapes, ancestral ritual, and language as a kind of pattern or code.</p>
+      <a href="assets/poetry-portfolio.pdf" class="download-link">Full poetry portfolio (PDF)</a>
 
       <h4>Published</h4>
 
